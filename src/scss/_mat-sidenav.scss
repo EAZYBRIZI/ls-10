@@ -1,0 +1,118 @@
+@use 'theme/colors';
+@use 'theme/typography';
+
+
+.mat-sidenav-container {
+   height: 100%;
+   background-color: inherit;
+   color: inherit;
+}
+
+.mat-sidenav {
+   width: 360px;
+   padding-inline: 12px;
+   border: none;
+   background-color: colors.surface();
+   color: colors.on-surface-variant();
+
+   .mat-drawer-inner-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   @media(max-width:1239px) {
+      width: 80px;
+      padding-inline: 0;
+   }
+
+   .mat-mdc-list-item {
+      border-radius: 28px;
+      height: 56px !important;
+
+      @media(max-width:1239px) {
+         padding: 0;
+         flex-direction: column;
+         border-radius: 16px;
+         justify-content: center !important;
+      }
+
+      .mdc-list-item__content {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+
+         @media(max-width:1239px) {
+            justify-content: center;
+         }
+
+         .mat-mdc-list-item-title {
+            margin: 0;
+            @include typography.label-large;
+            color: inherit;
+
+            @media(max-width:1239px) {
+               justify-content: center;
+               @include typography.label-medium;
+            }
+         }
+
+         .mat-mdc-list-item-unscoped-content {
+            margin-right: 12px;
+            color: inherit;
+
+            @media(max-width:1239px) {
+               display: none;
+            }
+         }
+      }
+
+      .mat-icon {
+         margin-inline: 16px 12px;
+         color: inherit;
+
+         @media(max-width:1239px) {
+            margin: 0 !important;
+            align-self: center !important;
+            height: 32px;
+            width: 56px;
+            display: grid;
+            place-content: center;
+            border-radius: 16px;
+            background-color: colors.secondary-container();
+         }
+      }
+
+      &.mat-mdc-list-item-active {
+         background-color: colors.secondary-container();
+         color: colors.on-secondary-container();
+         --symbol-fill: 1;
+
+         @media(max-width:1239px) {
+            background-color: colors.surface();
+         }
+      }
+
+      &.mat-mdc-list-item-interactive::before {
+         background-color: currentColor;
+
+         @media(max-width:1239px) {
+            background-color: colors.background();
+         }
+      }
+
+      .mat-ripple-element {
+         background-color: var(--md-sys-color-on-secondary-container);
+         opacity: .12;
+      }
+
+      &.mat-mdc-list-item-interactive:not(:focus):not(.mdc-list-item--disabled):hover::before {
+         opacity: .08;
+      }
+   }
+}

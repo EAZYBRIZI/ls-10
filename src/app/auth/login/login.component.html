@@ -2,7 +2,7 @@
 
     <form [formGroup]="loginForm">
       <mat-form-field>
-        <mat-label>1111@test.ru</mat-label>
+        <mat-label>E-Mail</mat-label>
         <input matInput type="text" formControlName="email">
       </mat-form-field>
       <ng-container *ngIf="email.dirty || email.touched">
@@ -11,7 +11,7 @@
       </ng-container>
   
       <mat-form-field>
-        <mat-label>1111</mat-label>
+        <mat-label>Password</mat-label>
         <input matInput type="password" formControlName="password">
       </mat-form-field>
       <ng-container *ngIf="password.dirty || password.touched">
