@@ -1,0 +1,7 @@
+@use '../../scss/theme/colors';
+@use '../../scss/theme/typography';
+
+h1 {
+    padding: 16px;
+    color: colors.on-surface();
+}

@@ -1,0 +1,108 @@
+@use '../scss/theme/colors';
+@use '../scss/theme/typography';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#title {
+    color: colors.on-surface();
+
+    @media screen and (max-width: 599px) {
+        display: flex;
+        justify-content: center;
+    };
+}
+
+.butttonMedia {
+    #button {
+        background-color: colors.surface();
+        color: colors.primary();
+        height: 40px !important;
+        border-radius: 20px;
+        margin: 15px 0px 10px 0px;
+        padding: 0px 24px;
+    }
+
+    @media screen and (max-width: 599px) {
+        display: flex;
+        justify-content: center;
+    };
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 360px;
+    height: 56px;
+    padding: 8px 0px 8px 0px;
+    margin-top: 8px;
+
+    border-radius: 8px;
+
+    background-color: colors.surface();
+
+    position: relative;
+    isolation: isolate;
+
+    &:before {
+        content: '';
+        position: absolute;
+        border-radius: 8px;
+        inset: 0;
+        opacity: var(--state-layer-opacity, 0);
+        background-color: colors.on-surface();
+        z-index: -1;
+    }
+
+    &:hover {
+        --state-layer-opacity: .08;
+    }
+
+    @media screen and (max-width: 599px) {
+        width: 100%;
+    };
+
+    .book {
+        display: flex;
+        flex-direction: column;
+        padding-left: 16px;
+
+        h1 {
+            color: colors.on-surface();
+
+            @include typography.body-large;
+
+            @media screen and (max-width: 1299px) {
+                @include typography.body-medium;
+            };
+
+            @media screen and (max-width: 599px) {
+                @include typography.body-small;
+            };
+        }
+
+        span {
+            color: colors.on-surface-variant();
+
+            @include typography.body-medium;
+
+            @media screen and (max-width: 1299px) {
+                @include typography.body-small;
+            };
+        }
+    }
+
+    .button {
+        align-items: center;
+        padding: 0px 24px 0px 16px;
+
+        .mat-icon {
+            color: colors.on-secondary-container();
+        }
+    }
+}

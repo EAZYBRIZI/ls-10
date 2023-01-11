@@ -1,0 +1,14 @@
+<h1 id="title">Книги</h1>
+<div class="butttonMedia"><button id="button" mat-raised-button (click)="addBook()">Добавить книгу</button></div>
+
+<div class="list" *ngFor="let book of bookService.getList() | async">
+  <div class="book">
+  <h1>{{ book.name }}</h1> 
+  <span>{{ book.author | author }}</span>
+  </div>
+  <div class="button">
+    <button mat-icon-button (click)="editBook(book)">
+      <mat-icon matListItemIcon>edit</mat-icon>
+    </button>
+  </div>
+</div>
